@@ -77,7 +77,7 @@ class Dashboard extends React.Component {
                     </div>
                 </div>
             </Aux>
-        );
+        )
 
         return (
             <Aux>
@@ -218,8 +218,8 @@ class Dashboard extends React.Component {
                     </Col>
                 </Row>
             </Aux>
-        );
+        )
     }
 }
 
-export default Dashboard;
+export default Dashboard
