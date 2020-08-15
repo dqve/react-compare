@@ -41,14 +41,14 @@ export default {
                     title: 'History',
                     type: 'item',
                     icon: 'feather icon-rewind',
-                    url: '/charts/nvd3'
+                    url: '/forms/history'
                 },
                 {
-                    id: 'maps',
+                    id: 'users',
                     title: 'Users',
                     type: 'item',
                     icon: 'feather icon-user',
-                    url: '/maps/google-map'
+                    url: '/forms/users'
                 }
             ]
         },
