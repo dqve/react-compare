@@ -6,6 +6,7 @@ window.$ = $;
 global.jQuery = $;
 
 const DashboardDefault = React.lazy(() => import('./Demo/Dashboard/Default'));
+const DashboardTwo = React.lazy(() => import('./Demo/Dashboard/dash-2'));
 
 const UIBasicButton = React.lazy(() => import('./Demo/UIElements/Basic/Button'));
 const UIBasicBadges = React.lazy(() => import('./Demo/UIElements/Basic/Badges'));
@@ -16,6 +17,8 @@ const UIBasicTabsPills = React.lazy(() => import('./Demo/UIElements/Basic/TabsPi
 const UIBasicBasicTypography = React.lazy(() => import('./Demo/UIElements/Basic/Typography'));
 
 const FormsElements = React.lazy(() => import('./Demo/Forms/FormsElements'));
+
+const compareDocs = React.lazy(() => import('./Demo/Forms/compareDocs'));
 
 const BootstrapTable = React.lazy(() => import('./Demo/Tables/BootstrapTable'));
 
@@ -28,6 +31,7 @@ const OtherDocs = React.lazy(() => import('./Demo/Other/Docs'));
 
 const routes = [
     { path: '/dashboard/default', exact: true, name: 'Default', component: DashboardDefault },
+    { path: '/dashboard/dash-2', exact: true, name: 'dash-2', component: DashboardTwo },
     { path: '/basic/button', exact: true, name: 'Basic Button', component: UIBasicButton },
     { path: '/basic/badges', exact: true, name: 'Basic Badges', component: UIBasicBadges },
     { path: '/basic/breadcrumb-paging', exact: true, name: 'Basic Breadcrumb Pagination', component: UIBasicBreadcrumbPagination },
@@ -35,6 +39,7 @@ const routes = [
     { path: '/basic/tabs-pills', exact: true, name: 'Basic Tabs & Pills', component: UIBasicTabsPills },
     { path: '/basic/typography', exact: true, name: 'Basic Typography', component: UIBasicBasicTypography },
     { path: '/forms/form-basic', exact: true, name: 'Forms Elements', component: FormsElements },
+    { path: '/forms/compare-docs', exact: true, name: 'Compare Documents', component: compareDocs },
     { path: '/tables/bootstrap', exact: true, name: 'Bootstrap Table', component: BootstrapTable },
     { path: '/charts/nvd3', exact: true, name: 'Nvd3 Chart', component: Nvd3Chart },
     { path: '/maps/google-map', exact: true, name: 'Google Map', component: GoogleMap },
