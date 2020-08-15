@@ -5,6 +5,7 @@ import './../../../assets/scss/style.scss';
 import Aux from "../../../hoc/_Aux";
 import Breadcrumb from "../../../App/layout/AdminLayout/Breadcrumb";
 import DEMO from "../../../store/constant";
+import logo from '../../../assets/images/logo.svg';
 
 class SignUp1 extends React.Component {
     render () {
@@ -22,7 +23,7 @@ class SignUp1 extends React.Component {
                         <div className="card">
                             <div className="card-body text-center">
                                 <div className="mb-4">
-                                    <i className="feather icon-user-plus auth-icon"/>
+                                    <img className="" style={{width: '50%'}} src={logo} alt="activity-user"/>
                                 </div>
                                 <h3 className="mb-4">Sign up</h3>
                                 <div className="input-group mb-3">
@@ -51,4 +52,4 @@ class SignUp1 extends React.Component {
     }
 }
 
-export default SignUp1;
+export default SignUp1
