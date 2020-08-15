@@ -16,6 +16,7 @@ const UIBasicCollapse = React.lazy(() => import('./Demo/UIElements/Basic/Collaps
 const UIBasicTabsPills = React.lazy(() => import('./Demo/UIElements/Basic/TabsPills'));
 const UIBasicBasicTypography = React.lazy(() => import('./Demo/UIElements/Basic/Typography'));
 
+
 const FormsElements = React.lazy(() => import('./Demo/Forms/FormsElements'));
 
 const compareDocs = React.lazy(() => import('./Demo/Forms/CompareDocs'));
