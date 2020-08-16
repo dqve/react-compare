@@ -9,8 +9,10 @@ import avatar2 from '../../assets/images/user/avatar-2.jpg';
 import avatar3 from '../../assets/images/user/avatar-3.jpg';
 import defaultAv from '../../assets/images/user/user.png';
 
-class Dashboard extends React.Component {
-    render() {
+function Dashboard (props) {
+
+
+
         const tabContent = (
             <Aux>
                 <div className="media friendlist-box align-items-center justify-content-center m-b-20">
@@ -220,6 +222,5 @@ class Dashboard extends React.Component {
             </Aux>
         )
     }
-}
 
 export default Dashboard

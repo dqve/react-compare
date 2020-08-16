@@ -1,24 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Dropdown} from 'react-bootstrap';
+import { useAuth } from "../../../../../context/auth";
 
-import ChatList from './ChatList';
 import Aux from "../../../../../hoc/_Aux";
 import DEMO from "../../../../../store/constant";
 
 import Avatar1 from '../../../../../assets/images/user/avatar-1.jpg';
 
-class NavRight extends Component {
-    state = {
-        listOpen: false
-    };
+function NavRight(props) {
+    const { setAuthTokens } = useAuth();
 
-    render() {
-
-        return (
+    function logOut(e) {
+        setAuthTokens("");
+    } 
+    return (
             <Aux>
                 <ul className="navbar-nav ml-auto">
                     <li>
-                        <Dropdown alignRight={!this.props.rtlLayout}>
+                        <Dropdown alignRight={props.rtlLayout}>
                             <Dropdown.Toggle variant={'link'} id="dropdown-basic">
                                 <i className="icon feather icon-bell"/>
                             </Dropdown.Toggle>
@@ -37,15 +36,15 @@ class NavRight extends Component {
                         </Dropdown>
                     </li>
                     <li>
-                        <Dropdown alignRight={!this.props.rtlLayout} className="drp-user">
+                        <Dropdown alignRight={props.rtlLayout} className="drp-user">
                             <Dropdown.Toggle variant={'link'} id="dropdown-basic">
                                 <i className="icon feather icon-settings"/>
                             </Dropdown.Toggle>
                             <Dropdown.Menu alignRight className="profile-notification">
                                 <div className="pro-head">
                                     <img src={Avatar1} className="img-radius" alt="User Profile"/>
-                                    <span>John Doe</span>
-                                    <a href={DEMO.BLANK_LINK} className="dud-logout" title="Logout">
+                                    <span>Test User</span>
+                                    <a href={DEMO.BLANK_LINK} className="dud-logout" title="Logout"  onClick={logOut}>
                                         <i className="feather icon-log-out"/>
                                     </a>
                                 </div>
@@ -57,10 +56,8 @@ class NavRight extends Component {
                         </Dropdown>
                     </li>
                 </ul>
-                <ChatList listOpen={this.state.listOpen} closed={() => {this.setState({listOpen: false});}} />
             </Aux>
         );
-    }
 }
 
 export default NavRight;

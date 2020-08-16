@@ -1,5 +1,5 @@
 import React, { Component, Suspense } from 'react';
-import {Route, Switch, Redirect} from 'react-router-dom';
+import {/*Route,*/ Switch, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Fullscreen from "react-full-screen";
 import windowSize from 'react-window-size';
@@ -8,10 +8,10 @@ import Navigation from './Navigation';
 import NavBar from './NavBar';
 import Breadcrumb from './Breadcrumb';
 import Loader from "../Loader";
-import routes from "../../../routes";
+import routes from "../../../routes/routes";
 import Aux from "../../../hoc/_Aux";
 import * as actionTypes from "../../../store/actions";
-
+import PrivateRoute from '../../../routes/PrivateRoute';
 import './app.scss';
 
 class AdminLayout extends Component {
@@ -44,11 +44,12 @@ class AdminLayout extends Component {
 
         const menu = routes.map((route, index) => {
             return (route.component) ? (
-                <Route
+                <PrivateRoute
                     key={index}
                     path={route.path}
                     exact={route.exact}
                     name={route.name}
+                    component={route.component}
                     render={props => (
                         <route.component {...props} />
                     )} />
