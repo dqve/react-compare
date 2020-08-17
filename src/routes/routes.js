@@ -5,16 +5,16 @@ window.jQuery = $;
 window.$ = $;
 global.jQuery = $;
 
-const DashboardDefault = React.lazy(() => import('../Demo/Dashboard/Default'));
+const DashboardDefault = React.lazy(() => import('../Components/Dashboard/Default'));
 
 
-const FormsElements = React.lazy(() => import('../Demo/Forms/FormsElements'));
+const FormsElements = React.lazy(() => import('../Components/Forms/FormsElements'));
 
-const compareDocs = React.lazy(() => import('../Demo/Forms/Compare'));
+const compareDocs = React.lazy(() => import('../Components/Forms/Compare'));
 
-const users = React.lazy(() => import('../Demo/Forms/Users'));
+const users = React.lazy(() => import('../Components/Forms/Users'));
 
-const history = React.lazy(() => import('../Demo/Forms/History'));
+const history = React.lazy(() => import('../Components/Forms/History'));
 
 const routes = [
     { path: '/dashboard/default', exact: true, name: 'Default', component: DashboardDefault },

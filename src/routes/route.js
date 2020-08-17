@@ -1,7 +1,7 @@
 import React from 'react';
 
-const SignUp1 = React.lazy(() => import('../Demo/Authentication/SignUp/SignUp1'));
-const Signin1 = React.lazy(() => import('../Demo/Authentication/SignIn/SignIn1'));
+const SignUp1 = React.lazy(() => import('../Components/Authentication/SignUp/SignUp1'));
+const Signin1 = React.lazy(() => import('../Components/Authentication/SignIn/SignIn1'));
 const Register = React.lazy(() => import('../test-files/register'));
 
 const route = [
