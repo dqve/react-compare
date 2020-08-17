@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Row, Col, Card, Form, Button, InputGroup} from 'react-bootstrap';
 //import stringSimilarity from "string-similarity";
 //import ReactDiffViewer from 'react-diff-viewer';
 
 import Aux from "../../hoc/_Aux";
 
-function compareDocs(props) {
+function CompareDocs(props) {
+    const [file1, setFile1] = useState("");
+    const [file2, setFile2] = useState("");
+    const [name1, setName1] = useState("");
+    const [name2, setName2] = useState("");
 
     function reload() {
         window.location.reload(false);
     }
 
-    function parseFile1(input){
-        if(input){
+    function parseFile1(event){
+        if(event){
         
-        let file = input.files[0]
+        let file = event.target.files[0]
         
         let reader = new FileReader();
 
@@ -24,6 +28,8 @@ function compareDocs(props) {
 
         reader.onload = function() {
             console.log(reader.result);
+            
+            setFile1(result)
             return result
         };
 
@@ -37,10 +43,10 @@ function compareDocs(props) {
 
     }
 
-    function parseFile2(input){
-        if(input){
+    function parseFile2(event){
+        if(event){
         
-        let file = input.files[0]
+        let file = event.target.files[0]
         
         let reader = new FileReader();
 
@@ -50,6 +56,8 @@ function compareDocs(props) {
 
         reader.onload = function() {
             console.log(reader.result);
+            
+            setFile2(result)
             return result
         };
 
@@ -61,17 +69,20 @@ function compareDocs(props) {
             return ""
         } 
     }
-    /*
-    function parseName1(){
-
+    
+    function parseName1(event){
+        setName1(event.target.value)
+        return event.target.value
     }
-    function parseName2(){
-        
-    }*/
+    function parseName2(event){
+        setName2(event.target.value)
+        return event.target.value
+    }
 
     function handleCompare(){
+       
        props.noClickMe()
-       props.requestScore(parseFile1, parseFile2)
+       props.requestScore(file1,file2,name1,name2)
     }
         return (
             <Aux>
@@ -87,12 +98,12 @@ function compareDocs(props) {
                                         <Form>
                                         <Form.Group controlId="formBasicPassword">
                                                 <Form.Label>Name</Form.Label>
-                                                <Form.Control type="text" placeholder="Enter name of student" />
+                                                <Form.Control type="text" placeholder="Enter name of student" onChange={parseName1} />
                                             </Form.Group>
                                             <Form.Group controlId="formBasicEmail">
                                                 <Form.Label>Select Document</Form.Label>
                                                 <InputGroup className="mb-3">
-                                                    <input type="file" id="file1" onChange={() => {parseFile1(this)}}/><InputGroup.Append />
+                                                    <input type="file" id="file1" onChange={parseFile1}/><InputGroup.Append />
                                                 </InputGroup>
                                                 <Form.Text className="text-muted">
                                                     By selecting a document, you agree to allow us save it's contents on our servers
@@ -115,12 +126,12 @@ function compareDocs(props) {
                                         <Form>
                                         <Form.Group controlId="formBasicPassword">
                                                 <Form.Label>Name</Form.Label>
-                                                <Form.Control type="text" placeholder="Enter name of student" />
+                                                <Form.Control type="text" placeholder="Enter name of student" onChange={parseName2} />
                                             </Form.Group>
                                             <Form.Group controlId="formBasicEmail">
                                                 <Form.Label>Select Document</Form.Label>
                                                 <InputGroup className="mb-3">
-                                                    <input type="file" id="file2" onChange={() => {parseFile2(this)}}/><InputGroup.Append />
+                                                    <input type="file" id="file2" onChange={parseFile2}/><InputGroup.Append />
                                                 </InputGroup>
                                                 <Form.Text className="text-muted">
                                                     By selecting a document, you agree to allow us save it's contents on our servers
@@ -141,6 +152,6 @@ function compareDocs(props) {
                     </Row>
             </Aux>
         );
-    }
+}
 
-export default compareDocs;
+export default CompareDocs;
