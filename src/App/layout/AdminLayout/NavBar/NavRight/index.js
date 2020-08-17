@@ -16,6 +16,7 @@ function NavRight(props) {
     return (
             <Aux>
                 <ul className="navbar-nav ml-auto">
+                    
                     <li>
                         <Dropdown alignRight={props.rtlLayout}>
                             <Dropdown.Toggle variant={'link'} id="dropdown-basic">
@@ -54,6 +55,11 @@ function NavRight(props) {
                                 </ul>
                             </Dropdown.Menu>
                         </Dropdown>
+                    </li>
+                    <li>
+                        <a href={DEMO.BLANK_LINK} className="dud-logout" title="Logout"  onClick={logOut}>
+                                        Logout  <i className="feather icon-log-out"/>
+                                    </a>    
                     </li>
                 </ul>
             </Aux>
