@@ -47,15 +47,14 @@ class compare extends React.Component {
 
     render() {
         const isClicked = this.state
-        if(isClicked === false){
+        if(!isClicked === false){
            return < CompareDocs noClickMe={this.handleClick} requestScore={this.requestScore} />
             //console.log("false!")
         }
         else{
-           // return < CompareResults similarity={this.state.similarity} onCompareClick={this.onCompareClick}/>
-           console.log("true!")
+            return < CompareResults similarity={this.state.similarity} onCompareClick={this.onCompareClick}/>
+           //console.log("true!")
         }
-        return < CompareResults similarity={this.state.similarity} onCompareClick={this.onCompareClick}/>
     }
 }
 

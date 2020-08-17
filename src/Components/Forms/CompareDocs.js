@@ -12,7 +12,7 @@ function compareDocs(props) {
     }
 
     function parseFile1(input){
-        if(input.files){
+        if(input){
         
         let file = input.files[0]
         
@@ -38,7 +38,7 @@ function compareDocs(props) {
     }
 
     function parseFile2(input){
-        if(input.files){
+        if(input){
         
         let file = input.files[0]
         

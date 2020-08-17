@@ -5,7 +5,9 @@ import CountUp from 'react-countup';
 import Aux from "../../hoc/_Aux";
 
 function compareResults(props) {
-
+        function handleClick(){
+            props.onCompareClick()
+        }
         return (
             <Aux>
                 <Row className="justify-content-md-center">
@@ -24,7 +26,7 @@ function compareResults(props) {
                                                 </h1>
                                                 <h3>This is the percentage similarity between the two documents</h3>
                                             </div>
-                                            <Button  onCompareClick={props.onCompareClick}>Compare</Button>
+                                            <Button  onClick={handleClick}>Compare</Button>
                                         </Form>
                                     </Col>
                                 </Row>
