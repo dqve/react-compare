@@ -1,7 +1,7 @@
 {
   "name": "docs-compare",
   "version": "0.1.0",
-  "homepage": "http://dqve.github.io/react-compare/docs-compare/",
+  "homepage": "http://dqve.github.io/react-compare/build/",
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.3.1",
