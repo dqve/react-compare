@@ -10,11 +10,11 @@ const DashboardDefault = React.lazy(() => import('../Components/Dashboard/Defaul
 
 const FormsElements = React.lazy(() => import('../Components/Forms/FormsElements'));
 
-const compareDocs = React.lazy(() => import('../Components/Forms/Compare'));
+const compareDocs = React.lazy(() => import('../Components/Forms/compare'));
 
 const users = React.lazy(() => import('../Components/Forms/Users'));
 
-const history = React.lazy(() => import('../Components/Forms/History'));
+const history = React.lazy(() => import('../Components/Forms/history'));
 
 const routes = [
     { path: '/dashboard/default', exact: true, name: 'Default', component: DashboardDefault },
