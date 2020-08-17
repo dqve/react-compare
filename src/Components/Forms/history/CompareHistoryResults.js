@@ -28,7 +28,7 @@ function CompareResults(props) {
                                                 <h1 style={{fontSize: "500%", fontWeight: "900px"}}>
                                                     <CountUp end={props.similarity || 100}/> %
                                                 </h1>
-                                                <h3>This is the percentage similarity between the two documents {(props.name1 && props.name1) ? "from "+props.name1+"and"+props.name2 : ""}</h3>
+                                                <h3>This is the percentage similarity between the two documents {(props.name1 && props.name1) ? "from "+props.name1+" and "+props.name2 : ""}</h3>
                                             </div>
                                             <ReactDiffViewer oldValue={oldCode} newValue={newCode} splitView={true} /> <br/>
                                             <Button  onClick={handleClick}>Compare</Button>

@@ -3,7 +3,7 @@ import {Row, Col, Card, Form, Button, Collapse, Table} from 'react-bootstrap';
 
 import Aux from "../../../hoc/_Aux";
 
-function History({name1, text1, hist, ...props}){
+function CompareDocs({name1, text1, hist, requestScore, ...props}){
 
         const [file2, setFile2] = useState("");
         const [name2, setName2] = useState("");
@@ -34,7 +34,7 @@ function History({name1, text1, hist, ...props}){
         function handleCompare(){
           parseFile()
           props.onCompareClick()
-          props.requestScore(file2,name2)
+          props.requestHistScore(file2,name2)
         }
 
         return (
@@ -114,4 +114,4 @@ function History({name1, text1, hist, ...props}){
         );
 }
 
-export default History
+export default CompareDocs

@@ -11,7 +11,8 @@ class History extends React.Component {
     constructor(props){
         super(props)
         this.handleClick = this.handleClick.bind(this);
-        this.requestHistory = this.requestScore.bind(this)
+        this.requestHistory = this.requestHistory.bind(this);
+        this.requestHistScore = this.requestHistScore.bind(this);
         this.onCompareClick = this.onCompareClick.bind(this);
         this.state = {
         isClicked: false,
@@ -63,13 +64,13 @@ class History extends React.Component {
         })
     }
 
-     requestScore = (text2, name2, text1=this.state.text1) => {
+     requestHistScore = (text2, name2, text1=this.state.text1) => {
         axios.get("https://243f611b-2817-48a5-886b-e4822a76ad68.mock.pstmn.io/similarity/check", {
             text1,
             text2
         }).then(result => {
             if (result.status === 200) {
-                this.handleClick("final","","",name2,"",text2,result.data.similarity)
+                this.handleClick("final","",this.state.name1,name2,this.state.text1,text2,result.data.similarity)
                 console.log(this.state.similarity, result)
             }
         })
@@ -87,7 +88,7 @@ class History extends React.Component {
             onCompareClick={this.onCompareClick} 
             name1={this.state.name1} 
             text1={this.state.text1}
-            requestScore={this.state.requestScore}
+            requestHistScore={this.requestHistScore}
             />
         }
         else if (isClicked === "final"){
