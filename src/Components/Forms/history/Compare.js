@@ -106,7 +106,7 @@ function History({name1, text1, hist, ...props}){
                     </Row>
                     <Row className="justify-content-md-center">
                             <Col md="auto" expand="lg">
-                    <Button variant="primary" size="lg" onClick={handleCompare}>Compare</Button>
+                    <Button variant="primary" size="lg" onClick={()=>handleCompare}>Compare</Button>
                     <Button variant="secondary" size="lg" onClick={reload}>Clear</Button>
                     </Col>
                     </Row>
