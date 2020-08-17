@@ -61,6 +61,13 @@ function compareDocs(props) {
             return ""
         } 
     }
+    /*
+    function parseName1(){
+
+    }
+    function parseName2(){
+        
+    }*/
 
     function handleCompare(){
        props.noClickMe()
