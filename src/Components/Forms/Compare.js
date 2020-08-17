@@ -1,10 +1,10 @@
 import React from 'react';
-import {Row, Col, Card, Form, Button, InputGroup, FormControl} from 'react-bootstrap';
-import CompareDocs from "CompareDocs"
-import CompareResults from "CompareResults"
+//import {Row, Col, Card, Form, Button, InputGroup, FormControl} from 'react-bootstrap';
+import CompareDocs from "./CompareDocs"
+import CompareResults from "./CompareResults"
 import axios from 'axios';
-import Aux from "../../hoc/_Aux";
-import Loader from "../../App/layout/Loader";
+//import Aux from "../../hoc/_Aux";
+//import Loader from "../../App/layout/Loader";
 
 class compare extends React.Component {
     constructor(props){
