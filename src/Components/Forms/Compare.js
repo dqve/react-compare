@@ -11,6 +11,7 @@ class compare extends React.Component {
         super(props)
         this.handleClick = this.handleClick.bind(this);
         this.requestScore = this.requestScore.bind(this);
+        this.onCompareClick = this.onCompareClick.bind(this);
         this.state = {
         isClicked: false,
         similarity: ""
@@ -18,12 +19,18 @@ class compare extends React.Component {
         console.log(this.state)
     }
 
-    handleClick = (click = "loading", similarity= "") => {
+    handleClick = (click = true, similarity= "") => {
         this.setState({
         isClicked: click,
         similarity: similarity
         }, () => console.log(this.state.isClicked))
 
+    }
+
+    onCompareClick = () => {
+        this.setState({
+        isClicked: false
+        }, () => console.log(this.state.isClicked))
     }
 
     requestScore = (text1, text2) => {
@@ -40,13 +47,15 @@ class compare extends React.Component {
 
     render() {
         const isClicked = this.state
-        if(!isClicked == false){
-            return < CompareDocs noClickMe={this.handleClick} requestScore={this.requestScore} />
-            console.log(isClicked)
+        if(isClicked === false){
+           return < CompareDocs noClickMe={this.handleClick} requestScore={this.requestScore} />
+            //console.log("false!")
         }
         else{
-            return < CompareResults similarity={this.state.similarity}/>
+           // return < CompareResults similarity={this.state.similarity} onCompareClick={this.onCompareClick}/>
+           console.log("true!")
         }
+        return < CompareResults similarity={this.state.similarity} onCompareClick={this.onCompareClick}/>
     }
 }
 

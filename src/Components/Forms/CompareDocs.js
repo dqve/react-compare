@@ -1,7 +1,7 @@
 import React from 'react';
-import {Row, Col, Card, Form, Button, InputGroup, FormControl} from 'react-bootstrap';
-import stringSimilarity from "string-similarity";
-import ReactDiffViewer from 'react-diff-viewer';
+import {Row, Col, Card, Form, Button, InputGroup} from 'react-bootstrap';
+//import stringSimilarity from "string-similarity";
+//import ReactDiffViewer from 'react-diff-viewer';
 
 import Aux from "../../hoc/_Aux";
 
