@@ -1,11 +1,8 @@
 import React from 'react';
-//import {Row, Col, Card, Form, Button, InputGroup, FormControl} from 'react-bootstrap';
 import CompareDocs from "./Compare"
 import CheckHistory from "./History"
 import CompareResults from "./CompareHistoryResults";
 import axios from 'axios';
-//import Aux from "../../hoc/_Aux";
-//import Loader from "../../App/layout/Loader";
 
 class History extends React.Component {
     constructor(props){
